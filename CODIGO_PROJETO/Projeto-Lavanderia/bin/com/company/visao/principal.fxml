@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="809.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControlePrincipal">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@dark-theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="btn_cliente" layoutX="54.0" layoutY="284.0" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="48.0" prefWidth="168.0" text="Cadastrar Cliente" />
+            <Button fx:id="btn_pedido" layoutX="283.0" layoutY="284.0" mnemonicParsing="false" onAction="#cadastrarPedido" prefHeight="48.0" prefWidth="214.0" text="Cadastrar Pedido Serviço" />
+            <Button fx:id="btn_servico" layoutX="822.0" layoutY="284.0" mnemonicParsing="false" onAction="#cadastrarServico" prefHeight="48.0" prefWidth="204.0" text="Cadastrar Tipo Serviço" />
+            <Button fx:id="btn_roupa" layoutX="546.0" layoutY="284.0" mnemonicParsing="false" onAction="#cadastrarRoupa" prefHeight="48.0" prefWidth="214.0" text="Cadastrar Tipo de Roupa" />
+            <ImageView fitHeight="186.0" fitWidth="200.0" layoutX="44.0" layoutY="83.0">
+               <image>
+                  <Image url="@../images/cadastrar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="186.0" fitWidth="214.0" layoutX="283.0" layoutY="83.0">
+               <image>
+                  <Image url="@../images/images.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="186.0" fitWidth="214.0" layoutX="546.0" layoutY="83.0">
+               <image>
+                  <Image url="@../images/roupa.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="186.0" fitWidth="200.0" layoutX="832.0" layoutY="83.0">
+               <image>
+                  <Image url="@../images/tipos_serviço.jpg" />
+               </image>
+            </ImageView>
+            <MenuBar fx:id="MbConfiguracao" layoutX="6.0" layoutY="8.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Configuração">
+                  <items>
+                    <MenuItem fx:id="btncadastrarUsuario" mnemonicParsing="false" onAction="#cadastrarUsuario" text="Cadastro de Usuarios" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

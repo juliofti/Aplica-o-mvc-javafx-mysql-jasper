@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" prefHeight="706.0" prefWidth="1061.0" style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControleRoupa">
+   <children>
+      <TabPane fx:id="abas" layoutX="6.0" layoutY="6.0" onMouseClicked="#gerenciarAbas" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+        <tabs>
+          <Tab fx:id="tp_cadastrar_roupa" text="Cadastrar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="685.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_descricao_roupa" layoutX="14.0" layoutY="29.0" prefHeight="30.0" prefWidth="132.0" text="Descrição:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDescricao" layoutX="137.0" layoutY="29.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_cor_roupa" layoutX="14.0" layoutY="75.0" prefHeight="30.0" prefWidth="132.0" text="Cor:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCor" layoutX="137.0" layoutY="75.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_tecido_roupa" layoutX="14.0" layoutY="124.0" prefHeight="30.0" prefWidth="95.0" text="Tecido:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTecido" layoutX="137.0" layoutY="124.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Button fx:id="btn_cadastrar" layoutX="24.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnOnActionCadastrar" prefHeight="40.0" prefWidth="102.0" text="Cadastrar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tp_consultar_roupa" text="Consultar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="1061.0">
+                     <children>
+                        <Label fx:id="lbl_roupa_consulta" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="142.0" text="Descrição:">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtConsultaNome" layoutX="161.0" layoutY="18.0" prefHeight="31.0" prefWidth="628.0" />
+                        <Button fx:id="btn_Consultar" layoutX="802.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnConsultarOnActiion" prefHeight="31.0" prefWidth="155.0" text="Consultar" />
+                        <TableView fx:id="roupa" layoutX="5.0" layoutY="65.0" prefHeight="418.0" prefWidth="527.0" style="-fx-background-color: #5ab0c5;">
+                          <columns>
+                            <TableColumn fx:id="cln_id_roupa" prefWidth="48.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="cln_descricao_roupa" prefWidth="145.0" text="Descrição" />
+                              <TableColumn fx:id="cln_cor_roupa" minWidth="0.0" prefWidth="144.0" resizable="false" text="Cor" />
+                              <TableColumn fx:id="cln_tecido_roupa" minWidth="0.0" prefWidth="187.0" text="Tecido" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btn_Atualizar" layoutX="565.0" layoutY="88.0" mnemonicParsing="false" onAction="#abrirAbaAtualizacao" prefHeight="46.0" prefWidth="104.0" text="Atualizar" />
+                        <Button fx:id="btn_Deletar" layoutX="567.0" layoutY="148.0" mnemonicParsing="false" onAction="#deletarCliente" prefHeight="46.0" prefWidth="100.0" text="Deletar" />
+                      <AnchorPane layoutX="939.0" layoutY="274.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tp_atualizar_roupa" disable="true" text="Atualizar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="685.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_descricao_roupa1" layoutX="14.0" layoutY="29.0" prefHeight="30.0" prefWidth="132.0" text="Descrição:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDescricao1" layoutX="133.0" layoutY="29.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_cor_roupa1" layoutX="14.0" layoutY="75.0" prefHeight="30.0" prefWidth="132.0" text="Cor:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCor1" layoutX="133.0" layoutY="75.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_tecido_roupa1" layoutX="14.0" layoutY="124.0" prefHeight="30.0" prefWidth="95.0" text="Tecido:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTecido1" layoutX="133.0" layoutY="124.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Button fx:id="btn_alterar" layoutX="24.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnOnActionAlterar" prefHeight="40.0" prefWidth="102.0" text="Alterar" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="lbl_tipo_de_roupa" layoutX="36.0" layoutY="49.0" prefHeight="21.0" prefWidth="776.0" text="Cadastro Tipo de Roupa" textFill="#17ddeb">
+         <font>
+            <Font name="Arial Black" size="58.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

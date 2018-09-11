@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" prefHeight="706.0" prefWidth="1061.0" style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControleUsuario">
+   <children>
+      <TabPane fx:id="abas" layoutX="6.0" layoutY="6.0" onMouseClicked="#gerenciarAbas" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+        <tabs>
+          <Tab fx:id="cadastrar" text="Cadastrar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="1158.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_nome_usuario" layoutX="14.0" layoutY="36.0" prefHeight="30.0" prefWidth="210.0" text="Nome de Usuario:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNome" layoutX="237.0" layoutY="36.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_senha_usuario" layoutX="15.0" layoutY="88.0" prefHeight="30.0" prefWidth="209.0" text="Senha de Usuário:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="txtSenha" layoutX="237.0" layoutY="88.0" prefHeight="31.0" prefWidth="321.0" />
+                        <Label fx:id="lbl_perfil_usuario" layoutX="18.0" layoutY="144.0" prefHeight="30.0" prefWidth="203.0" text="Perfil de Usuário:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cb_perfil_usuario" layoutX="237.0" layoutY="144.0" prefWidth="150.0" />
+                        <Button fx:id="btn_cadastrar_usuario" layoutX="29.0" layoutY="417.0" mnemonicParsing="false" onAction="#btnOnActionCadastrar" prefHeight="40.0" prefWidth="102.0" text="Cadastrar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="consultar" text="Consultar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="1061.0">
+                     <children>
+                        <Label fx:id="lbl_descricao_consulta" layoutX="14.0" layoutY="14.0" text="Nome de Usuário:">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtConsultaDescricao" layoutX="243.0" layoutY="18.0" prefHeight="31.0" prefWidth="546.0" />
+                        <Button fx:id="btnConsultar" layoutX="802.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnConsultarOnActiion" prefHeight="31.0" prefWidth="155.0" text="Consultar" />
+                        <TableView fx:id="tb_usuario" layoutX="5.0" layoutY="65.0" prefHeight="380.0" prefWidth="542.0" style="-fx-background-color: #5ab0c5;">
+                          <columns>
+                            <TableColumn fx:id="cln_id_usuario" prefWidth="48.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="cln_nome_usuario" prefWidth="211.0" text="Nome de Usuário" />
+                              <TableColumn fx:id="cln_senha_usuario" minWidth="0.0" prefWidth="135.0" resizable="false" text="Senha de Usuário" />
+                              <TableColumn fx:id="cln_perfil_usuario" minWidth="0.0" prefWidth="147.0" resizable="false" text="Perfil de Usuário" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnAtualizar" layoutX="583.0" layoutY="65.0" mnemonicParsing="false" onAction="#abrirAbaAtualizacao" prefHeight="46.0" prefWidth="104.0" text="Atualizar" />
+                      <AnchorPane layoutX="939.0" layoutY="274.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnDeletar" layoutX="583.0" layoutY="141.0" mnemonicParsing="false" onAction="#deletar" prefHeight="46.0" prefWidth="104.0" text="Deletar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="atualizar" disable="true" text="Atualizar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="1158.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_nome_usuario1" layoutX="14.0" layoutY="36.0" prefHeight="30.0" prefWidth="210.0" text="Nome de Usuario:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNome1" layoutX="237.0" layoutY="36.0" prefHeight="31.0" prefWidth="322.0" />
+                        <Label fx:id="lbl_senha_usuario" layoutX="15.0" layoutY="88.0" prefHeight="30.0" prefWidth="209.0" text="Senha de Usuário:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="txtSenha1" layoutX="238.0" layoutY="88.0" prefHeight="31.0" prefWidth="321.0" />
+                        <Label fx:id="lbl_perfil_usuario1" layoutX="18.0" layoutY="144.0" prefHeight="30.0" prefWidth="203.0" text="Perfil de Usuário:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cb_perfil_usuario1" layoutX="237.0" layoutY="144.0" prefWidth="150.0" />
+                        <Button fx:id="btn_atualizar_usuario1" layoutX="29.0" layoutY="417.0" mnemonicParsing="false" onAction="#btnOnActionAtualizar" prefHeight="40.0" prefWidth="102.0" text="Atualizar" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="lbl_titulo_usuario" layoutX="36.0" layoutY="49.0" prefHeight="21.0" prefWidth="776.0" text="Cadastro de Usuários" textFill="#17ddeb">
+         <font>
+            <Font name="Arial Black" size="58.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

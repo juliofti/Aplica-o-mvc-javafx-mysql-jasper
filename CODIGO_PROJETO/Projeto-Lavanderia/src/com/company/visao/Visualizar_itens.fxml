@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" prefHeight="406.0" prefWidth="770.0" style="-fx-background-color: #5ab0c5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControleItens">
+   <children>
+      <TableView fx:id="tb_itens" layoutX="114.0" layoutY="177.0" prefHeight="215.0" prefWidth="543.0">
+        <columns>
+          <TableColumn fx:id="cln_id_itens" prefWidth="75.0" text="ID_ITENS" />
+          <TableColumn fx:id="cln_tipo_roupa" prefWidth="120.0" text="TIPO DE ROUPA" />
+            <TableColumn fx:id="cln_tipo_servico" prefWidth="133.0" text="TIPO DE SERVIÇO" />
+            <TableColumn fx:id="cln_valorUn" prefWidth="95.0" text="VALOR UN" />
+            <TableColumn fx:id="cln_quantidade" prefWidth="119.0" text="QUANTIDADE" />
+        </columns>
+      </TableView>
+      <Label fx:id="lbl_pedido_itens" layoutX="33.0" layoutY="34.0" text="PEDIDO:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPedido" editable="false" layoutX="154.0" layoutY="40.0" />
+      <Label fx:id="lbl_cliente_itens" layoutX="33.0" layoutY="95.0" text="Cliente:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCliente" editable="false" layoutX="154.0" layoutY="101.0" />
+      <TextField fx:id="txtDataItens" editable="false" layoutX="492.0" layoutY="46.0" prefHeight="31.0" prefWidth="131.0" />
+      <TextField fx:id="txtSituacao" editable="false" layoutX="525.0" layoutY="101.0" prefHeight="31.0" prefWidth="131.0" />
+      <Label fx:id="lbl_data_itens" layoutX="410.0" layoutY="40.0" text="Data:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_situacao_itens" layoutX="410.0" layoutY="95.0" text="Situação:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

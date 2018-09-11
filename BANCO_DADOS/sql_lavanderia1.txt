@@ -1,0 +1,161 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE IF NOT EXISTS `projeto_lavanderia` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `projeto_lavanderia`;
+
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(40) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `datanasc` date DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `telefone` varchar(14) NOT NULL,
+  `endereco` varchar(70) NOT NULL,
+  `cidade` varchar(20) NOT NULL,
+  `cep` varchar(9) NOT NULL,
+  `estado` varchar(2) NOT NULL,
+  PRIMARY KEY (`id_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` (`id_cliente`, `nome`, `cpf`, `datanasc`, `email`, `telefone`, `endereco`, `cidade`, `cep`, `estado`) VALUES
+	(1, 'Julio Alves Xavier', '757-207-281-05', '2009-05-18', 'julio.a.x.10@gmail.com', '(62)99322-9717', 'Rua Itaberai Quadra: 2H Lote:05 Vila Galvão', 'Senador Canedo', '7525-0000', 'MA'),
+	(2, 'Vanessa Xavier Alves', '757-207-281-06', '2018-06-06', 'vanessa@gmail.com', '(62)98296-6003', 'Rua Itaberai Quadra:2H', 'Senador Canedo', '7525-0000', 'GO'),
+	(3, 'Charles Xavier Alves', '757-207-281-04', '2018-06-07', 'charles@gmail.com', '(62)99322-9717', 'Rua Itaberai Quadra: 2h', 'Senador Canedo', '7525-0000', 'GO'),
+	(4, 'Alan Barbosa Fraga', '757-207-281-04', '2018-06-04', 'alan@gmail.com', '(62)99236-1851', 'Rua jaragua Quadra:2L Lote:05', 'Senador Canedo', '7525-0000', 'MA'),
+	(5, 'Pedro Alves da Silva', '757-207-281-04', '2018-06-06', 'pedro@gmail.com', '(62)82966-0030', 'Rua Lisboa JH Lote:20', 'Goiânia', '7525-0000', 'GO'),
+	(6, 'Bruno', '757-207-281-04', '2018-06-05', 'bruno@gmail.com', '(62)98795-4621', 'Rua bahia quadra: 2H', 'Senador Canedo', '7525-0000', 'GO');
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `itens_servico` (
+  `id_itens_servico` int(11) NOT NULL AUTO_INCREMENT,
+  `quantidade` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL,
+  `id_servico` int(11) NOT NULL,
+  `id_roupa` int(11) NOT NULL,
+  `valor` double NOT NULL,
+  PRIMARY KEY (`id_itens_servico`),
+  KEY `pedido_itens` (`id_pedido`),
+  KEY `servico_itens` (`id_servico`),
+  KEY `roupa_itens` (`id_roupa`),
+  CONSTRAINT `pedido_itens` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`),
+  CONSTRAINT `roupa_itens` FOREIGN KEY (`id_roupa`) REFERENCES `tipo_roupa` (`id_roupa`),
+  CONSTRAINT `servico_itens` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `itens_servico` DISABLE KEYS */;
+INSERT INTO `itens_servico` (`id_itens_servico`, `quantidade`, `id_pedido`, `id_servico`, `id_roupa`, `valor`) VALUES
+	(15, 2, 12, 2, 1, 6),
+	(18, 4, 14, 2, 6, 4.5),
+	(19, 1, 15, 1, 1, 5),
+	(20, 1, 21, 1, 6, 3.5),
+	(21, 2, 21, 5, 1, 4),
+	(22, 2, 21, 5, 1, 4),
+	(23, 2, 21, 5, 1, 4),
+	(24, 1, 37, 9, 1, 5.25),
+	(25, 1, 38, 7, 4, 4);
+/*!40000 ALTER TABLE `itens_servico` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
+  `data_pedido` date NOT NULL,
+  `valorTotal` double NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `pago` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id_pedido`),
+  KEY `pedido_cliente` (`id_cliente`),
+  CONSTRAINT `pedido_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
+INSERT INTO `pedido` (`id_pedido`, `data_pedido`, `valorTotal`, `id_cliente`, `pago`) VALUES
+	(1, '2018-06-18', 0, 1, 1),
+	(5, '2018-06-20', 0, 1, 1),
+	(7, '2018-06-20', 0, 1, 0),
+	(9, '2018-06-20', 0, 1, 1),
+	(10, '2018-06-20', 0, 1, 0),
+	(12, '2018-06-20', 12, 1, 1),
+	(14, '2018-06-20', 18, 1, 1),
+	(15, '2018-06-20', 5, 1, 1),
+	(16, '2018-06-20', 0, 1, 1),
+	(17, '2018-06-20', 0, 1, 0),
+	(18, '2018-06-20', 0, 1, 0),
+	(19, '2018-06-20', 0, 1, 0),
+	(20, '2018-06-20', 0, 1, 0),
+	(21, '2018-06-20', 27.5, 4, 1),
+	(22, '2018-06-21', 0, 1, 0),
+	(23, '2018-06-21', 0, 1, 0),
+	(24, '2018-06-21', 0, 4, 1),
+	(25, '2018-06-21', 0, 1, 0),
+	(26, '2018-06-21', 0, 1, 0),
+	(27, '2018-06-21', 0, 1, 0),
+	(28, '2018-06-21', 0, 1, 0),
+	(29, '2018-06-21', 0, 1, 0),
+	(30, '2018-06-21', 0, 1, 0),
+	(31, '2018-06-21', 0, 1, 0),
+	(32, '2018-06-21', 0, 1, 0),
+	(33, '2018-06-21', 0, 1, 0),
+	(34, '2018-06-21', 0, 1, 0),
+	(35, '2018-06-21', 0, 1, 1),
+	(36, '2018-06-21', 0, 1, 0),
+	(37, '2018-06-21', 5.25, 1, 1),
+	(38, '2018-06-21', 4, 2, 0);
+/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `servico` (
+  `id_servico` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao_servico` varchar(30) NOT NULL,
+  `valor_servico` double NOT NULL,
+  PRIMARY KEY (`id_servico`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `servico` DISABLE KEYS */;
+INSERT INTO `servico` (`id_servico`, `descricao_servico`, `valor_servico`) VALUES
+	(1, 'Passar Camiseta', 2),
+	(2, 'Lavar Camiseta', 3),
+	(5, 'Secar Camiseta', 1),
+	(6, 'Passar Calça', 3.5),
+	(7, 'Lavar Calça', 4),
+	(8, 'Secar Calça', 5),
+	(9, 'Passar Blusa', 5.25),
+	(10, 'Lavar Blusa', 1.95),
+	(11, 'Secar Blusa', 4.5);
+/*!40000 ALTER TABLE `servico` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `tipo_roupa` (
+  `id_roupa` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(30) NOT NULL,
+  `cor` varchar(30) NOT NULL,
+  `tecido` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_roupa`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `tipo_roupa` DISABLE KEYS */;
+INSERT INTO `tipo_roupa` (`id_roupa`, `descricao`, `cor`, `tecido`) VALUES
+	(1, 'Blusa', 'Preto', 'Algodão'),
+	(4, 'Calça', 'Amarelo', 'Algodão'),
+	(6, 'Camiseta', 'Rosa', 'Algodão');
+/*!40000 ALTER TABLE `tipo_roupa` ENABLE KEYS */;
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_usuario` varchar(20) NOT NULL,
+  `senha_usuario` varchar(20) NOT NULL,
+  `perfil_usuario` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `nome_usuario` (`nome_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` (`id_usuario`, `nome_usuario`, `senha_usuario`, `perfil_usuario`) VALUES
+	(1, 'julio', 'julio', 'Administrador'),
+	(5, 'Charles', '123456', 'Atendente');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

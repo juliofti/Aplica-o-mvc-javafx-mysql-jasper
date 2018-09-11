@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="793.0" prefWidth="1134.0" style="-fx-background-color: #40b6dd;" styleClass="background" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControleLogin">
+   <children>
+      <TextField fx:id="txtUsuario" layoutX="518.0" layoutY="277.0" prefHeight="37.0" prefWidth="185.0" />
+      <PasswordField fx:id="txtSenha" layoutX="518.0" layoutY="355.0" prefHeight="37.0" prefWidth="185.0" />
+      <Button fx:id="btn_entrar" layoutX="448.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnLogar" prefHeight="37.0" prefWidth="98.0" text="Entrar" />
+      <Button fx:id="btn_cancelar" layoutX="631.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnCancelar" prefHeight="37.0" prefWidth="105.0" text="Sair" />
+      <Label fx:id="lbl_usuario" layoutX="330.0" layoutY="264.0" styleClass="label-header" text="Usuário">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_senha" layoutX="330.0" layoutY="342.0" styleClass="label-header" text="Senha">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_lavanderia" layoutX="461.0" layoutY="77.0" prefHeight="82.0" prefWidth="238.0" styleClass="label-header" text="Lavanderia">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Button layoutX="825.0" layoutY="22.0" mnemonicParsing="false" onAction="#btn_pt" text="PT-BR" />
+      <Button layoutX="928.0" layoutY="21.0" mnemonicParsing="false" onAction="#btn_en" text="EN-US" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" prefHeight="706.0" prefWidth="1061.0" style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controle.ControleServico">
+   <children>
+      <TabPane fx:id="abas" layoutX="6.0" layoutY="6.0" onMouseClicked="#gerenciarAbas" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+        <tabs>
+          <Tab fx:id="cadastrar" text="Cadastrar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="1158.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_descricao_servico" layoutX="310.0" layoutY="112.0" prefHeight="30.0" prefWidth="121.0" text="Descrição:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDescricao" layoutX="456.0" layoutY="111.0" prefHeight="31.0" prefWidth="322.0" />
+                        <TextField fx:id="txtValorServico" layoutX="456.0" layoutY="166.0" prefHeight="31.0" prefWidth="169.0" />
+                        <Button fx:id="btn_cadastrar_servico" layoutX="421.0" layoutY="250.0" mnemonicParsing="false" onAction="#btnOnActionCadastrar" prefHeight="40.0" prefWidth="102.0" text="Cadastrar" />
+                        <Label fx:id="lbl_valor_servico" layoutX="276.0" layoutY="167.0" prefHeight="30.0" prefWidth="170.0" text="Valor Serviço:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="consultar" text="Consultar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="1061.0">
+                     <children>
+                        <Label fx:id="lbl_descricao_consulta" layoutX="14.0" layoutY="14.0" text="Descrição:">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtConsultaDescricao" layoutX="153.0" layoutY="18.0" prefHeight="31.0" prefWidth="636.0" />
+                        <Button fx:id="btnConsultar" layoutX="802.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnConsultarOnActiion" prefHeight="31.0" prefWidth="155.0" text="Consultar" />
+                        <TableView fx:id="servico" layoutX="5.0" layoutY="65.0" prefHeight="380.0" prefWidth="464.0" style="-fx-background-color: #5ab0c5;">
+                          <columns>
+                            <TableColumn fx:id="cln_id_servico" prefWidth="48.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="cln_descricao_servico" prefWidth="275.0" text="Descrição" />
+                              <TableColumn fx:id="cln_valor_servico" minWidth="0.0" prefWidth="140.0" resizable="false" text="Valor_Serviço" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnAtualizar" layoutX="479.0" layoutY="65.0" mnemonicParsing="false" onAction="#abrirAbaAtualizacao" prefHeight="46.0" prefWidth="104.0" text="Atualizar" />
+                      <AnchorPane layoutX="939.0" layoutY="274.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnDeletar" layoutX="479.0" layoutY="128.0" mnemonicParsing="false" onAction="#deletar" prefHeight="46.0" prefWidth="104.0" text="Deletar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="Atualizar" disable="true" text="Atualizar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="1158.0" style="-fx-background-color: #5ab0c5;">
+                     <children>
+                        <Label fx:id="lbl_descricao_servico1" layoutX="310.0" layoutY="112.0" prefHeight="30.0" prefWidth="121.0" text="Descrição:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDescricao1" layoutX="456.0" layoutY="111.0" prefHeight="31.0" prefWidth="322.0" />
+                        <TextField fx:id="txtValorServico1" layoutX="456.0" layoutY="166.0" prefHeight="31.0" prefWidth="169.0" />
+                        <Button fx:id="btn_atualizar_servico1" layoutX="421.0" layoutY="250.0" mnemonicParsing="false" onAction="#btnOnActionAtualizar" prefHeight="40.0" prefWidth="102.0" text="Atualizar" />
+                        <Label fx:id="lbl_valor_servico1" layoutX="276.0" layoutY="167.0" prefHeight="30.0" prefWidth="170.0" text="Valor_Serviço:" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="lbl_titulo_servico" layoutX="36.0" layoutY="49.0" prefHeight="21.0" prefWidth="776.0" text="Cadastro de Serviço" textFill="#17ddeb">
+         <font>
+            <Font name="Arial Black" size="58.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
