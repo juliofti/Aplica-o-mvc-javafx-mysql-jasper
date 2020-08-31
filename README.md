@@ -23,6 +23,6 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
   <li>Relatório básico de itens</li>
 <ul>
   
- <img src="Aplicacao-mvc-javafx-mysql-jasper/IDENTIFICACAO/Menu.png">
+ <img src="/IDENTIFICACAO/Menu.png">
  
 
