@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
  <hr>
  <h3>Screenshot</h3>
   <img src="/IDENTIFICACAO/Login.png">
- <img src="/IDENTIFICACAO/Menu.png">
+ <img src="/IDENTIFICACAO/Menu1.png">
   <img src="/IDENTIFICACAO/CadastroDeClientes.png">
  
 
