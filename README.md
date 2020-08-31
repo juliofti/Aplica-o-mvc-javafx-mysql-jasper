@@ -22,7 +22,9 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
   <li>Internacionalização</li>
   <li>Relatório básico de itens</li>
 <ul>
-  
+ <hr>
+  <h3>Screenshot</h3>
+ 
  <img src="/IDENTIFICACAO/Menu.png">
  
 
