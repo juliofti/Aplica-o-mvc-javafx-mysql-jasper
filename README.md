@@ -2,7 +2,7 @@
 
 Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvanderia feito para plataformas desktop.
 
-<h3>Tecnologias e Ferramentas</h3>
+<h3>Tecnologias e Ferramentas :</h3>
 <ul>
   <li>Java SDK 8u45</li>
   <li>JavaFX SDK 8u45</li>
@@ -14,7 +14,7 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
   <li>Jasper Reports</li>
 </ul>
 <hr>
-<h3>Propriedades do projeto</h3>
+<h3>Propriedades do projeto :</h3>
 <ul>
   <li>Construção das telas com JavaFX Scene Builder 8</li>
   <li>Padrão arquitetural MVC</li>
@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
   <li>Relatório básico de itens</li>
 <ul>
  <hr>
- <h3>Screenshot</h3>
+ <h3>Screenshot :</h3>
   <img src="/IDENTIFICACAO/Login.png">
  <img src="/IDENTIFICACAO/Menu1.png">
   <img src="/IDENTIFICACAO/CadastroDeClientes.png">
