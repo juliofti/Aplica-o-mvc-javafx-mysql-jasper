@@ -23,8 +23,9 @@ Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvand
   <li>Relatório básico de itens</li>
 <ul>
  <hr>
-  <h3>Screenshot</h3>
- 
+ <h3>Screenshot</h3>
+  <img src="/IDENTIFICACAO/Login.png">
  <img src="/IDENTIFICACAO/Menu.png">
+  <img src="/IDENTIFICACAO/CadastroDeClientes.png">
  
 
