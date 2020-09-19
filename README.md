@@ -1,6 +1,6 @@
 # Aplicacao-mvc-javafx-mysql-jasper
 
-Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lanvanderia feito para plataformas desktop.
+Esse projeto foi desenvolvido para fins de estudo, é uma aplicação de lavanderia feito para plataformas desktop.
 
 <h3>Tecnologias e Ferramentas :</h3>
 <ul>
